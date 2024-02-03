@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Location Detection Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fcf3ec;
+
+    }
+    
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+    
+    .left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /* background-color: #fcf3ec; */
+      background-color: #d13065;
+      border-top-right-radius: 50% 30%;
+      border-bottom-right-radius: 50% 30%;
+      padding: 50px;
+    }
+    
+    .left img {
+      width: 200px;
+      margin-bottom: 30px;
+    }
+    
+    .left p {
+      font-size: 24px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    
+    .right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+      background-color: #fcf3ec;
+
+    }
+    
+    .location-container {
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .location-container h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    
+    .location-container label {
+      font-size: 16px;
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    .location-container input {
+      font-size: 16px;
+      padding: 10px;
+     border-top: #c2185b;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      width: 90%;
+    }
+    
+    .location-container button {
+      font-size: 16px;
+      padding: 10px 20px;
+      background-color: #e91e63;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .location-container button:hover {
+      background-color: #c2185b;
+    }
+    
+    .home-btn {
+      font-size: 18px;
+      padding: 10px 20px;
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      margin-left: 50px;
+    }
+    
+    .home-btn:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    .location-img {
+    height: 20px;
+    margin-left: 15px;
+    position: absolute;
+    right: 10px;
+    left:1300px;
+    top:58.5%;
+    transform: translateY(-50%);
+    width: 20px;
+   
+  } 
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <img src="https://i.pinimg.com/originals/33/bf/d6/33bfd6d89a289ec7d37f06cd90b79109.png" alt="Food Logo">
+      <p>Good food is all the sweeter when shared with good friends.</p>
+      <p>Eat well, travel often.</p>
+    </div>
+    <div class="right">
+       <h3>Welcome to my food order site ,here you will get all different side of indian foods like south north ,west ,east.</h3>
+      
+
+      <div class="location-container">
+        <h2>Enter your location</h2><a href="https://www.google.com/maps/@30.513499,76.6612694,16z"><img class="location-img" src="https://www.burgerking.in/static/media/detect-location.054d5431.svg"></a>
+        <label for="location-input">Location:</label>
+        <input type="text" id="location-input" placeholder="Enter your location">
+        <a href="http://127.0.0.1:5500/mainpure.html"><button id="submit-btn">Submit</button></a>
+        
+        </div>
+        </div>
+        
+        
+          </div>
+          
+          <script>
+            const submitBtn = document.getElementById('submit-btn');
+        
+            submitBtn.addEventListener('click', () => {
+              alert('Your location has been detected! ');
+            });
+          </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Food Order Website</title>
+	<!-- CSS Styles -->
+	<style>
+		/* Pop-up styles */
+		.offer-popup {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			z-index: 9999;
+			display: none;
+		}
+		.offer-popup img {
+			display: block;
+			margin: auto;
+			max-width: 100%;
+			height: auto;
+		}
+		.offer-popup input[type="text"] {
+			display: block;
+			margin: 20px auto;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			width: 80%;
+			font-size: 16px;
+		}
+		.offer-popup button {
+			display: block;
+			margin: auto;
+			padding: 10px 20px;
+			background-color: #FF4500;
+			color: #fff;
+			border: none;
+			font-weight: bold;
+			cursor: pointer;
+		}
+		.offer-popup button:hover {
+			background-color: #FF8C00;
+		}
+        .offer-popup img{
+            width:300px;
+        }
+	</style>
+</head>
+<body>
+	<!-- Pop-up offer -->
+	<div class="offer-popup" id="offer-popup">
+		<img src="https://images6.alphacoders.com/698/698287.jpg" alt="Your first order image">
+        <p>Enter NEW100 get 100rs Off on your first order</p>
+		<label for="coupon-code">Enter your coupon code:</label>
+		<input type="text" id="coupon-code">
+		<button onclick="closeOffer()">Close</button>
+	</div>
+	<!-- JavaScript code -->
+	<script>
+		// Get the pop-up element
+		var offerPopup = document.getElementById("offer-popup");
+		// Check if the pop-up should be displayed (e.g. user hasn't closed it yet)
+		if (localStorage.getItem("offerClosed") === null) {
+			offerPopup.style.display = "block";
+		}
+		// Function to close the pop-up and store the user's choice
+		function closeOffer() {
+			offerPopup.style.display = "none";
+			localStorage.setItem("offerClosed", true);
+			var couponCode = document.getElementById("coupon-code").value;
+			// Do something with the coupon code (e.g. validate it and apply a discount)
+			console.log("Coupon code entered:", couponCode);
+		}
+	</script>
+</body>
+</html>
